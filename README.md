@@ -109,4 +109,4 @@ El entregable final consta de redactar un pequeño informe respondiendo a estas 
 ## 6. Entrega
 Deberás redactar un pequeño informe (formato PDF) respondiendo a las preguntas expuestas en el **Cuestionario Reflexivo**. 
 
-Este documento, junto con cualquier observación que consideres relevante, deberá subirse a la correspondiente tarea habilitada en el campus virtual / servidor **GUAC** antes de la fecha límite indicada por el profesorado.
+Este documento, junto con cualquier observación que consideres relevante, deberá subirse a la correspondiente tarea habilitada en el campus virtual / servidor **GUAC**.
