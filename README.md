@@ -85,7 +85,39 @@ Usa la herramienta `time` de Unix (por ejemplo `time ./sys_4k /tmp/datos.txt`) p
 - **`user` (User time):** Tiempo que sumó ejecutando **TU código** C en el espacio de usuario.
 - **`sys` (System time):** Tiempo de CPU gastado por el Kernel **en su lado**, realizando el trabajo y moviendo punteros y datos que le habías pedido.
 
-Rellena en tu cabeza o en un papel una tabla similar a esta:
+### 4.1 Ejemplos reales de ejecución
+
+Para medir los tiempos, utilizaremos el comando `time` seguido del ejecutable y la ruta al fichero de datos. Aquí tienes ejemplos de qué esperar (los tiempos exactos variarán según tu CPU y disco):
+
+**Ejemplo con Syscalls (Buffer 4KB):**
+```bash
+time ./sys_4k /tmp/datos.txt
+```
+*Salida aproximada:*
+```text
+Total líneas: 7281777
+
+real    0m0.293s
+user    0m0.100s
+sys     0m0.130s
+```
+
+**Ejemplo con Memoria Mapeada (Mmap):**
+```bash
+time ./mmap /tmp/datos.txt
+```
+*Salida aproximada:*
+```text
+Total líneas: 7281777
+
+real    0m0.118s
+user    0m0.090s
+sys     0m0.030s
+```
+
+> [!IMPORTANT]
+> Fíjate que el fichero de datos se encuentra en `/tmp/datos.txt`. Si intentas ejecutar los programas sin haber hecho antes `make datos`, recibirás un error de "archivo no encontrado".
+
 | Ejecutable | Tiempo Total (`real`) | Tu Código (`user`) | Tiempo de Kernel (`sys`) |
 | :--- | :--- | :--- | :--- |
 | `./sys_1` (buffer = 1 byte) | | | |

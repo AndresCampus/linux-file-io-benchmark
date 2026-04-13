@@ -30,6 +30,6 @@ datos:
 
 # Regla de limpieza para borrar los ejecutables y archivos temporales
 clean:
-	rm -f $(TARGETS) datos.txt
+	rm -f $(TARGETS) /tmp/datos.txt
 
 .PHONY: all clean datos
