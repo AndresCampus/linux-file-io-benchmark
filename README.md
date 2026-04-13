@@ -27,6 +27,10 @@ En este repositorio se proporcionan 3 implementaciones base que debes estudiar, 
 ## 3. Preparación del Laboratorio
 
 Primero, asegúrate de estar en un entorno Linux o macOS con `gcc` instalado.
+Clona el repositorio usando:
+```bash
+git clone https://github.com/AndresCampus/linux-file-io-benchmark.git
+```
 
 ### Paso 3.1: Entorno de Pruebas Empíricas
 Vamos a generar un archivo enorme y repetitivo, con un salto de línea por secuencia para poder contarlas visualmente. Incluimos una regla `make` para automatizarlo. Ejecuta:
