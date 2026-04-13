@@ -29,29 +29,21 @@ En este repositorio se proporcionan 3 implementaciones base que debes estudiar, 
 Primero, asegúrate de estar en un entorno Linux o macOS con `gcc` instalado.
 
 ### Paso 3.1: Entorno de Pruebas Empíricas
-Vamos a generar un archivo enorme y repetitivo, con un salto de línea por secuencia para poder contarlas visualmente. Ejecuta este comando en tu terminal para crear un archivo llamado `datos.txt` de exactamente 500 MB:
+Vamos a generar un archivo enorme y repetitivo, con un salto de línea por secuencia para poder contarlas visualmente. Incluimos una regla `make` para automatizarlo. Ejecuta:
 
 ```bash
-# Escribe incesantemente "Línea de prueba..." hasta llegar a los 500 MB
-yes "Esta es una linea de prueba para contar repeticiones y saltos de linea." | head -c 500M > datos.txt
+make datos
 ```
+*(Esto puede tardar unos segundos, generará un archivo `datos.txt` de exactamente 500 MB).*
 
 ### Paso 3.2: Compilación
-Para que la comparativa del método `Llamadas a Sistema` se observe de manera explícita, vamos a compilar generando un ejecutable configurado con el *Peor Escenario Posible* y otro con un *Escenario Óptimo*:
+Gracias al fichero `Makefile` provisto en el repositorio, compilar todos los esqueletos experimentales es inmediato. Simplemente ejecuta:
 
 ```bash
-# 1. Syscalls con buffer ridículo de 1 byte (La Tortura de la CPU)
-gcc -DBUFFER_SIZE=1 read_sys.c -o sys_1
-
-# 2. Syscalls con buffer estándar de 4KB (El tamaño típico de página de RAM)
-gcc -DBUFFER_SIZE=4096 read_sys.c -o sys_4k
-
-# 3. Biblioteca estándar C (Libc)
-gcc read_libc.c -o libc
-
-# 4. Memoria mapeada en RAM (Mmap)
-gcc read_mmap.c -o mmap
+make
 ```
+
+Esto generará automáticamente los 4 binarios que utilizaremos en las pruebas (`sys_1`, `sys_4k`, `libc`, `mmap`). Si deseas borrarlos al finalizar, puedes usar `make clean`.
 
 ---
 
