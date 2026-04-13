@@ -103,3 +103,10 @@ El entregable final consta de redactar un pequeño informe respondiendo a estas 
    strace -c ./libc datos.txt
    ```
    Adjunta ambas tablas y expón una conclusión sobre **cuántas veces exactas se interrumpió a la CPU (Context Switch)** para llamar a `read()`. ¿Por qué pasa eso?
+
+---
+
+## 6. Entrega
+Deberás redactar un pequeño informe (formato PDF) respondiendo a las preguntas expuestas en el **Cuestionario Reflexivo**. 
+
+Este documento, junto con cualquier observación que consideres relevante, deberá subirse a la correspondiente tarea habilitada en el campus virtual / servidor **GUAC** antes de la fecha límite indicada por el profesorado.
