@@ -39,7 +39,7 @@ Vamos a generar un archivo enorme y repetitivo, con un salto de línea por secue
 ```bash
 make datos
 ```
-*(Esto puede tardar unos segundos, generará un archivo `datos.txt` de exactamente 500 MB (524288000 bytes)).*
+*(Esto puede tardar unos segundos, generará un archivo `/tmp/datos.txt` de exactamente 500 MB (524288000 bytes)).*
 
 ### Paso 3.2: Compilación
 Puedes compilar el proyecto de forma automática o manual.
@@ -80,7 +80,7 @@ Cualquiera de los dos métodos generará automáticamente los 4 binarios que uti
 > [!WARNING]
 > **Aviso sobre `./sys_1`**: Debido a su ineficiencia extrema por diseño, el ejecutable `sys_1` puede tardar **varios minutos** en completar la lectura. ¡Se recomienda empezar probando el resto de los ejecutables primero (`sys_4k`, `libc`, `mmap`) y dejar `sys_1` ejecutando al final para no bloquearos!
 
-Usa la herramienta `time` de Unix (por ejemplo `time ./sys_4k datos.txt`) para ejecutar los test e inspeccionar tres métricas clave:
+Usa la herramienta `time` de Unix (por ejemplo `time ./sys_4k /tmp/datos.txt`) para ejecutar los test e inspeccionar tres métricas clave:
 - **`real` (Wall time):** Tiempo total que le costó obtener un resultado (como cronometrado por reloj).
 - **`user` (User time):** Tiempo que sumó ejecutando **TU código** C en el espacio de usuario.
 - **`sys` (System time):** Tiempo de CPU gastado por el Kernel **en su lado**, realizando el trabajo y moviendo punteros y datos que le habías pedido.
@@ -104,11 +104,11 @@ El entregable final consta de redactar un pequeño informe respondiendo a estas 
 3. **Mmap y la Desaparición del Kernel**: Revisa el campo **`sys`** obtenido con `./mmap` al mapear el fichero, respecto al conseguido usando `./sys_4k`. Analiza por qué `mmap` arroja datos del sistema tan bajos y justifica en base al concepto teórico de ***Zero-Copy*** (Cero-Copia de Buffers). En qué consiste realmente el acceso a ficheros mendiante `mmap()`.   
 4. **La Lupa de `Strace`**: La orden `strace -c` monitoriza como si fuéramos hackers **todas las peticiones y llamadas que un usuario le realiza al kernel**. Ejecuta:
    ```bash
-   strace -c ./sys_1 datos.txt
+   strace -c ./sys_1 /tmp/datos.txt
    ```
    Y compáralo frente a esto:
    ```bash
-   strace -c ./libc datos.txt
+   strace -c ./libc /tmp/datos.txt
    ```
    Adjunta ambas tablas y expón una conclusión sobre **cuántas veces exactas se interrumpió a la CPU (Context Switch)** para llamar a `read()`. ¿Por qué pasa eso?
 

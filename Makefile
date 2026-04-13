@@ -26,7 +26,7 @@ mmap: read_mmap.c
 
 # Generar archivo de datos temporal 
 datos:
-	yes "Esta es una linea de prueba para contar repeticiones y saltos de linea." | head -c 524288000 > datos.txt
+	yes "Esta es una linea de prueba para contar repeticiones y saltos de linea." | head -c 524288000 > /tmp/datos.txt
 
 # Regla de limpieza para borrar los ejecutables y archivos temporales
 clean:
