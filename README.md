@@ -34,7 +34,7 @@ Vamos a generar un archivo enorme y repetitivo, con un salto de línea por secue
 ```bash
 make datos
 ```
-*(Esto puede tardar unos segundos, generará un archivo `datos.txt` de exactamente 500 MB).*
+*(Esto puede tardar unos segundos, generará un archivo `datos.txt` de exactamente 500 MB (524288000 bytes)).*
 
 ### Paso 3.2: Compilación
 Puedes compilar el proyecto de forma automática o manual.
@@ -71,6 +71,9 @@ Cualquiera de los dos métodos generará automáticamente los 4 binarios que uti
 
 > [!TIP]
 > **Antes de empezar**: Si observáis que las segundas ejecuciones son más rápidas que las primeras es porque Linux almacena en la caché de la RAM las páginas de disco leídas recientemente (Page Cache). Esto es completamente normal y una métrica importante en sistemas.
+
+> [!WARNING]
+> **Aviso sobre `./sys_1`**: Debido a su ineficiencia extrema por diseño, el ejecutable `sys_1` puede tardar **varios minutos** en completar la lectura. ¡Se recomienda empezar probando el resto de los ejecutables primero (`sys_4k`, `libc`, `mmap`) y dejar `sys_1` ejecutando al final para no bloquearos!
 
 Usa la herramienta `time` de Unix (por ejemplo `time ./sys_4k datos.txt`) para ejecutar los test e inspeccionar tres métricas clave:
 - **`real` (Wall time):** Tiempo total que le costó obtener un resultado (como cronometrado por reloj).
