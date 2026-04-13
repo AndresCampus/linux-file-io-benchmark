@@ -96,7 +96,7 @@ El entregable final consta de redactar un pequeño informe respondiendo a estas 
 
 1. **La Paradoja de los Syscalls**: Teniendo en cuenta y comparado `sys_1` y `sys_4k` ¿A qué se debe semejante brecha colosal en el rendimiento teniendo en cuenta que dentro llevan *literalmente las mismas líneas de código base*?
 2. **Magia de la Libc**: En un vistazo rápido, parece que la versión de libc (`fgetc()`) evalúa el fichero **byte a byte** igual que hiciera `sys_1`, pero, sin embargo, su rendimiento se compite e iguala con `sys_4k`. **¿Qué estrategia utiliza la estructura `FILE *` por debajo del telón para optimizar este proceso?**
-3. **Mmap y la Desaparición del Kernel**: Revisa el campo **`sys`** obtenido con `./mmap` al mapear el fichero, respecto al conseguido usando `./sys_4k`. Analiza por qué `mmap` arroja datos del sistema tan bajos y justifica en base al concepto teórico de ***Zero-Copy*** (Cero-Copia de Buffers).
+3. **Mmap y la Desaparición del Kernel**: Revisa el campo **`sys`** obtenido con `./mmap` al mapear el fichero, respecto al conseguido usando `./sys_4k`. Analiza por qué `mmap` arroja datos del sistema tan bajos y justifica en base al concepto teórico de ***Zero-Copy*** (Cero-Copia de Buffers). En qué consiste realmente el acceso a ficheros mendiante `mmap()`.   
 4. **La Lupa de `Strace`**: La orden `strace -c` monitoriza como si fuéramos hackers **todas las peticiones y llamadas que un usuario le realiza al kernel**. Ejecuta:
    ```bash
    strace -c ./sys_1 datos.txt
