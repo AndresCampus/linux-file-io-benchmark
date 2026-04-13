@@ -30,6 +30,7 @@ Primero, asegúrate de estar en un entorno Linux o macOS con `gcc` instalado.
 Clona el repositorio usando:
 ```bash
 git clone https://github.com/AndresCampus/linux-file-io-benchmark.git
+cd linux-file-io-benchmark
 ```
 
 ### Paso 3.1: Entorno de Pruebas Empíricas
