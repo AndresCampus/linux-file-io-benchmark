@@ -92,7 +92,7 @@ Rellena en tu cabeza o en un papel una tabla similar a esta:
 
 ## 5. El Cuestionario Reflexivo
 
-El entregable final consta de redactar un pequeño informe respondiendo a estas 4 preguntas, justificándolas en base al marco teórico y tus experimentos anteriores.
+El entregable final consta de redactar un pequeño informe respondiendo a estas 4 preguntas, justificándolas en base al marco teórico y tus experimentos anteriores. **Se os anima encarecidamente a investigar por vuestra cuenta, apoyándoos en páginas del manual (`man`), documentación en línea útil y agentes de IA conversacionales para comprender con total profundidad los conceptos planteados antes de redactar la respuesta.**
 
 1. **La Paradoja de los Syscalls**: Teniendo en cuenta y comparado `sys_1` y `sys_4k` ¿A qué se debe semejante brecha colosal en el rendimiento teniendo en cuenta que dentro llevan *literalmente las mismas líneas de código base*?
 2. **Magia de la Libc**: En un vistazo rápido, parece que la versión de libc (`fgetc()`) evalúa el fichero **byte a byte** igual que hiciera `sys_1`, pero, sin embargo, su rendimiento se compite e iguala con `sys_4k`. **¿Qué estrategia utiliza la estructura `FILE *` por debajo del telón para optimizar este proceso?**
